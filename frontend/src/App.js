@@ -5,7 +5,7 @@ import Editor from './pages/Editor';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/collab-documents">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/document/:id" element={<Editor />} />
