@@ -18,7 +18,7 @@ const io = new Server(server, {
 app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:3000' }));
 app.use(express.json());
 
-// ── In-memory store ──────────────────────────────────────────────
+// In-memory store
 const docs = {};
 function now() { return new Date().toISOString(); }
 function makeDoc(title = 'Untitled Document', content = '') {
@@ -27,7 +27,7 @@ function makeDoc(title = 'Untitled Document', content = '') {
   return docs[id];
 }
 
-// ── REST API ─────────────────────────────────────────────────────
+// REST API
 app.get('/api/health', (req, res) => res.json({ status: 'OK' }));
 
 app.get('/api/documents', (req, res) => {
@@ -61,7 +61,7 @@ app.delete('/api/documents/:id', (req, res) => {
   res.json({ message: 'Deleted' });
 });
 
-// ── Socket.IO ────────────────────────────────────────────────────
+// Socket.IO
 const rooms = {};
 const users = {};
 const COLORS = ['#E63946','#2A9D8F','#E9C46A','#F4A261','#457B9D','#6A4C93','#1982C4','#8AC926'];
@@ -115,8 +115,10 @@ function broadcastUsers(io, docId) {
 }
 
 const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT} (in-memory mode)`));
-// Keep alive - prevent Render free tier sleep
-setInterval(() => {
-  http.get('http://localhost:' + (process.env.PORT || 5000) + '/api/health', () => {});
-}, 14 * 60 * 1000);
+server.listen(PORT, () => {
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  // Keep alive ping
+  setInterval(() => {
+    http.get(`http://localhost:${PORT}/api/health`, () => {});
+  }, 14 * 60 * 1000);
+});
