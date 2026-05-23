@@ -116,3 +116,8 @@ function broadcastUsers(io, docId) {
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT} (in-memory mode)`));
+// Keep alive - prevent Render free tier sleep
+const http = require('http');
+setInterval(() => {
+  http.get('http://localhost:' + (process.env.PORT || 5000) + '/api/health', () => {});
+}, 14 * 60 * 1000);
