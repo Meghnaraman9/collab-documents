@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/collab-documents/static/css/main.be981e45.css",
+    "main.js": "/collab-documents/static/js/main.2ccdfd9b.js",
+    "index.html": "/collab-documents/index.html",
+    "main.be981e45.css.map": "/collab-documents/static/css/main.be981e45.css.map",
+    "main.2ccdfd9b.js.map": "/collab-documents/static/js/main.2ccdfd9b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be981e45.css",
+    "static/js/main.2ccdfd9b.js"
+  ]
+}
