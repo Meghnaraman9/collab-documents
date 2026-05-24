@@ -1,3 +1,9 @@
+Company name: CODTECH IT SOLUTIONS 
+Name: Dakoju Meghana
+Intern ID: CTIS8959
+Domain: Full stack web development
+Duration: 4 weeks
+Mentor: Neels Santhosh Kumar
 # Collab Documents
 
 A **Real-Time Collaborative Document Editor** — CodTech Internship Task 3.
@@ -123,3 +129,4 @@ CLIENT_URL=http://localhost:3000
 ---
 
 *CodTech Internship – Full Stack Track – Task 3*
+<img width="1920" height="1080" alt="Screenshot (669)" src="https://github.com/user-attachments/assets/39374cce-bd04-4b06-90ee-b274e520295a" />
